@@ -1,0 +1,12 @@
+<button onclick="fetch('/control/start')">Mulai Streaming</button>
+<button onclick="fetch('/control/stop')">Berhenti</button>
+<canvas id="videoCanvas"></canvas>
+
+<script>
+    const ws = new WebSocket('wss://alamat-server-anda.com');
+    ws.onmessage = (event) => {
+        // Gunakan library player seperti Broadway.js atau jsmpeg 
+        // untuk menggambar byte video ke canvas
+        renderToCanvas(event.data);
+    };
+</script>
